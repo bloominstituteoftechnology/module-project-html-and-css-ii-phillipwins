@@ -64,13 +64,18 @@ p, h1, h2, h3, h4, h5, h6 {
       background-color: blue; 
       color: white;
       padding: 0.5rem;
-       
+      display: flex;
+      flex-direction: row;
     }
     /* 👉 Task 4- Target the divs that are directly nested underneath the id headerTop.
     Make them display as inline block, instead of block.
     This will make them render on the same line. */
     #headerTop div {
-      display: inline-block;
+      margin-right: 12px;
+      /* display: flex; */
+      /* align-items: baseline; */
+      /* justify-content: space-between; */
+      /* flex-direction: row; */
     }
 
     /* 👉 Task 5- Target the spans that are nested inside the id headerTop.
@@ -78,6 +83,11 @@ p, h1, h2, h3, h4, h5, h6 {
     This will prevent the spans from crashing against one another. */
     #headerTop span {
       margin: 0.5rem;
+    } 
+
+    .super-mail {
+     font-weight: bold;
+     
     }
 
     /* 👉 Task 6- Target the first span nested inside the element with id headerTop.
@@ -99,12 +109,14 @@ p, h1, h2, h3, h4, h5, h6 {
     Make them display as inline block, instead of block.
     This will cause them to render on the same line.
     You can consolidate this rule with the one on step. 4 */
-    #headerBottom>div {
-      display: inline-block;
+    #headerBottom {
+      display: flex;
+      align-items: baseline;
+      
     }
     /* 👉 Task 9- Target the "Compose" button, although note it's a div instead an actual button.
     Give it color, bold text, background, padding, border radius, margin right, and a cursor of pointer. */
-    .blue-buttom {
+    .btn-blue {
       color: white;
       background-color: #176bad;
       padding: 0.4rem;
@@ -138,8 +150,8 @@ p, h1, h2, h3, h4, h5, h6 {
     /* 👉 Task 12- Target all divs directly nested inside elements with a class of email,
     and make them display as inline-block elements.
     This will make each email render all its details in the same line*/
-    .email>div {
-      display: inline-block
+    .email {
+     /* display: flex; */
     }
 
 
@@ -149,6 +161,9 @@ p, h1, h2, h3, h4, h5, h6 {
         padding: 0.4rem;
         padding-left: 1rem;
         border-bottom: 1px solid #c5c5c5;
+        display: flex;
+        /* justify-content: space-between; */
+        
     }
 
 
@@ -156,18 +171,25 @@ p, h1, h2, h3, h4, h5, h6 {
     Make the email author and the email subject take 35% of the width of the parent element.
     Make the check, the date and the size take up 8% of the width of the parent element.
     This will arrange the details in visible columns. */ 
-    .email-name, email-subject {
-      width: 35;
+    .email-name, .email-subject {
+      width: 35%;
     } 
     
       .email-check, .email-date, .email-size {
-        width: 8%;
+        
+        width: 8%; 
+      } 
+      .email-subject {
+        margin-right: 30px;
+      } 
+      .email-date {
+        margin-right: 10px;
       }
       
 
     /* 👉 Task 15- Target the second email and have its font weight be bold.
     This will make it look "unread". */
-      .email:nth-child(2) {
+      .email:nth-child(1) {
         font-weight: bold;
       }
       
@@ -186,7 +208,7 @@ p, h1, h2, h3, h4, h5, h6 {
     <header>
       <div id="headerTop">
         <div>
-          <span>Super Mail</span>
+          <span class="super-mail">SUPER MAIL</span>
           <span>Jess</span>
         </div>
         <div>
@@ -194,9 +216,10 @@ p, h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
       <div id="headerBottom">
-        <div>Compose</div>
+        <div class="btn-blue">Compose</div>
         <div>
-          <button>All mail</button>
+
+          <button class="active">All mail</button>
           <button>Unread</button>
           <button>Pinned</button>
           <button>VIPs</button>
